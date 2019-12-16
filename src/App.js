@@ -19,7 +19,8 @@ switchNameHandler = (newName) => {
       { name: "Manu", age: 29 },
       { name: "Stephanie", age: 27 }
     ],
-    otherstate: "some other value"
+    otherstate: "some other value",
+    showPersons: false
   });
 };
 
@@ -31,6 +32,11 @@ nameChangedHandler = (event) => {
       { name: "Stephanie", age: 27 }
     ]
   });
+}
+
+togglePersonHandler = () =>{
+  const doesShow = this.state.showPersons;
+  this.setState({showPersons: !doesShow});
 }
 
   render() {
@@ -45,25 +51,31 @@ nameChangedHandler = (event) => {
     return (
       <div className="App">
         <h1>Hi am Abdoul</h1>
-        <button style={style} onClick={() => this.switchNameHandler('Maximilian!')}>
-          Switch name
-        </button>
-        <Person
-          name={this.state.persons[0].name}
-          age={this.state.persons[0].age}
-          click={this.switchNameHandler.bind(this, "Max")}
+        <button
+          style={style}
+          onClick={this.togglePersonHandler}
         >
-          My hobbies: Coding
-        </Person>
-        <Person
-          name={this.state.persons[1].name}
-          age={this.state.persons[1].age}
-          changed={this.nameChangedHandler}
-        />
-        <Person
-          name={this.state.persons[2].name}
-          age={this.state.persons[2].age}
-        />
+          Toggle persons
+        </button>
+        { this.state.showPersons ? 
+          <div>
+          <Person
+            name={this.state.persons[0].name}
+            age={this.state.persons[0].age}
+            click={this.switchNameHandler.bind(this, "Max")}
+          >
+            My hobbies: Coding
+          </Person>
+          <Person
+            name={this.state.persons[1].name}
+            age={this.state.persons[1].age}
+            changed={this.nameChangedHandler}
+          />
+          <Person
+            name={this.state.persons[2].name}
+            age={this.state.persons[2].age}
+          />
+        </div> : null}
       </div>
     );
     //return React.createElement('div', {className: 'App'}, React.createElement('h1', null, 'Woow am learning react'));
