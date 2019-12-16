@@ -1,4 +1,4 @@
-import React, { useState, Component } from 'react';
+import React, { Component } from 'react';
 import './App.css';
 import Person from './Person/Person';
 
@@ -34,10 +34,18 @@ nameChangedHandler = (event) => {
 }
 
   render() {
+    const style = {
+      backgroundColor: 'white',
+      font: 'inherit',
+      border: '1px solid blue',
+      padding: '8px',
+      cursor: 'pointer'
+    };
+
     return (
       <div className="App">
         <h1>Hi am Abdoul</h1>
-        <button onClick={() => this.switchNameHandler('Maximilian!')}>
+        <button style={style} onClick={() => this.switchNameHandler('Maximilian!')}>
           Switch name
         </button>
         <Person
