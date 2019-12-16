@@ -22,6 +22,17 @@ switchNameHandler = (newName) => {
     otherstate: "some other value"
   });
 };
+
+nameChangedHandler = (event) => {
+  this.setState({
+    persons: [
+      { name: "Max", age: 28 },
+      { name: event.target.value, age: 29 },
+      { name: "Stephanie", age: 27 }
+    ]
+  });
+}
+
   render() {
     return (
       <div className="App">
@@ -39,6 +50,7 @@ switchNameHandler = (newName) => {
         <Person
           name={this.state.persons[1].name}
           age={this.state.persons[1].age}
+          changed={this.nameChangedHandler}
         />
         <Person
           name={this.state.persons[2].name}
