@@ -43,7 +43,8 @@ togglePersonHandler = () =>{
 
   render() {
     const style = {
-      backgroundColor: 'white',
+      backgroundColor: 'green',
+      color: 'white',
       font: 'inherit',
       border: '1px solid blue',
       padding: '8px',
@@ -65,20 +66,30 @@ togglePersonHandler = () =>{
           })}
         </div>
       );
+
+      style.backgroundColor = 'red';
     }
 
-    return (
-      <div className="App">
-        <h1>Hi am Abdoul</h1>
-        <button
-          style={style}
-          onClick={this.togglePersonHandler}
-        >
-          Toggle persons
-        </button> 
-        {persons} 
-      </div>
-    );
+    const styleClasses = [];
+
+    if(this.state.persons.length <= 2){
+      styleClasses.push('red');
+    }
+
+    if (this.state.persons.length <= 1){
+      styleClasses.push('bold');
+    }
+
+      return (
+        <div className="App">
+          <h1>Hi am Abdoul</h1>
+          <p className={styleClasses.join(' ')}>Beginning the react course</p>
+          <button style={style} onClick={this.togglePersonHandler}>
+            Toggle persons
+          </button>
+          {persons}
+        </div>
+      );
     //return React.createElement('div', {className: 'App'}, React.createElement('h1', null, 'Woow am learning react'));
   }
 }
