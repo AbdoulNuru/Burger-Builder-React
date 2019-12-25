@@ -8,7 +8,18 @@ const cockpit = (props) => {
     setTimeout(() => {
       alert('saved data');
     }, 1000);
+
+    return () => {
+      console.log('[cockpit.js] cleanup work in useEffect');
+    };
   }, []);
+
+  useEffect(() => {
+    console.log("[cockpit.js] 2nd useEffect");
+    return () => {
+      console.log("[cockpit.js] cleanup work in 2nd useEffect");
+    };
+  });
 
     const styleClasses = [];
     let btnClass = '';
