@@ -5,7 +5,10 @@ const cockpit = (props) => {
   useEffect(() => {
     console.log('[cockpit.js] useEffect');
     // Http request...
-  });
+    setTimeout(() => {
+      alert('saved data');
+    }, 1000);
+  }, []);
 
     const styleClasses = [];
     let btnClass = '';
