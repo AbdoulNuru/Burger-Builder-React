@@ -17,12 +17,12 @@ class Persons extends Component {
       return true;
     }else{
       return false;
-    }
+    } 
   }
 
   getSnapshotBeforeUpdate(prevProps, nextProps) {
     console.log("[Persons.js] getSnapshotBeforeUpdate");
-    return { message: "Snap!" };
+    return { message: "Snap!" }; 
   }
 
   /*componentWillUpdate(){
