@@ -57,7 +57,7 @@ class App extends Component {
     const persons = [...this.state.persons];
     persons[personIndex] = person;
 
-    this.setState({ persons: persons }); //here
+    this.setState({ persons: persons });
   };
 
   deletePersonHandler = personIndex => {
