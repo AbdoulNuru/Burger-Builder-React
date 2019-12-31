@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Aux from "../../../hoc/Auxiliary";
+import withClass from '../../../hoc/withClass';
 import classes from './Person.css';
 
 class Person extends Component {
@@ -11,8 +12,8 @@ class Person extends Component {
              <p key="i1" onClick={this.props.click}>
                I'm {this.props.name} and I'm {this.props.age}
                years old!!!
-             </p>,
-             <p key="i2"> {this.props.children} </p>,
+             </p>
+             <p key="i2"> {this.props.children} </p>
              <input key="i3" type="text" onChange={this.props.changed} value={this.props.name} />
            </Aux>
          );
@@ -20,4 +21,4 @@ class Person extends Component {
     
 };
 
-export default Person;
+export default withClass(Person, classes.Person);
