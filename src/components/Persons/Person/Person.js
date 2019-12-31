@@ -7,14 +7,14 @@ class Person extends Component {
          console.log("[Person.js] rendering...");
          return (
            //<div className={classes.Person}>
-           <Aux>
+           <React.Fragment>
              <p key="i1" onClick={this.props.click}>
                I'm {this.props.name} and I'm {this.props.age}
                years old!!!
              </p>,
              <p key="i2"> {this.props.children} </p>,
              <input key="i3" type="text" onChange={this.props.changed} value={this.props.name} />
-           </Aux>
+           </React.Fragment>
          );
     }
     
