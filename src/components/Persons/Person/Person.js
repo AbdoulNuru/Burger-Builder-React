@@ -12,7 +12,7 @@ class Person extends Component {
              </p>
              <p> {this.props.children} </p>
              <input type="text" onChange={this.props.changed} value={this.props.name} />
-           </div>
+           </div> 
          );
     }
     
